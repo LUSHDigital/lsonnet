@@ -1,0 +1,4 @@
+---
+service:
+  image: foo
+  tag: bar

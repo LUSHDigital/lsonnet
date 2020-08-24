@@ -1,0 +1,26 @@
+---
+service:
+  name: serviceName
+
+extraJobs:
+  - name: job1
+    command:
+      - "curl"
+      - "https://google.com"
+    image:
+      repository: testImage
+      tag: testTag
+    restartPolicy: Never
+    schedule: '1 2 3 4 5'
+    envVars:
+      keyOne: 'valueOne'
+      keyTwo: 'valueTwo'
+  - name: job2
+    command:
+      - "curl"
+      - "https://bbc.com"
+    image:
+      repository: testImage
+      tag: testTag
+    restartPolicy: Always
+    schedule: '* * * * *'

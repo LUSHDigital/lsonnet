@@ -1,0 +1,18 @@
+---
+envVars:
+  ADDITIONAL_ENV: ADDITIONAL_VALUE
+pullPolicy: Always
+replicas: 432
+secretEnvVars:
+  jwtPrivateKey:
+    name: JWT_PRIVATE_KEY
+    secretName: jwtsigning
+    key: app.rsa
+  jwtPublicKey:
+    name: JWT_PUBLIC_KEY
+    secretName: jwtsigning
+    key: app.rsa.pub
+service:
+  image: theRepo
+  tag: theTag
+  name: theServiceName

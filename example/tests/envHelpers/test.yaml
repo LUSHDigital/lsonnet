@@ -1,0 +1,12 @@
+---
+service:
+  name: blah
+
+envVars:
+  stuff: blah
+
+secretEnvVars:
+  secretKey:
+    name: MY_SECRET_ENV_VAR
+    secretName: kubeSecret
+    key: secretValue

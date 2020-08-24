@@ -1,0 +1,34 @@
+# You'll need these to run this
+# https://github.com/rliebz/tusk
+# brew install rliebz/tusk/tusk
+---
+tasks:
+  test:
+    usage: Run jsonnetunit tests
+    run:
+      - ../bin/lsonnet test
+
+  validate:
+    usage: Run validate against Kube schema
+    run:
+      - ../bin/lsonnet validate
+
+  migrate:
+    usage: Test a migration
+    run:
+      - ../bin/lsonnet migrate test-release
+
+  generate:
+    usage: Test a generation
+    run:
+      - ../bin/lsonnet generate --appconfig='{}' --pipelineconfig='{}'
+
+  audit:
+    usage: Get a full diff for a chart type
+    options:
+      chart:
+        usage: The chart name to diff against
+        required: true
+    run:
+      - mkdir -p _diffs
+      - helm list | grep ${chart} | awk '{print $1}' | xargs -I '{}' bash -c "./bin/lsonnet migrate '{}' | kubectl diff -f - | tee -a _diffs/'{}'.diff"

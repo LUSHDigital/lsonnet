@@ -1,0 +1,3 @@
+[submodule "example/lib/jsonnetunit"]
+	path = example/lib/jsonnetunit
+	url = https://github.com/yugui/jsonnetunit.git

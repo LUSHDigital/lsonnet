@@ -1,0 +1,16 @@
+---
+healthChecks:
+  deadline: 350
+  minReady: 60
+  livenessProbe:
+    httpGet:
+      path: /-/healthz
+      port: 8080
+    initialDelaySeconds: 30
+    timeoutSeconds: 40
+  readinessProbe:
+    httpGet:
+      path: /-/readyz
+      port: 9090
+    initialDelaySeconds: 50
+    timeoutSeconds: 60
