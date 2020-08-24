@@ -1,13 +1,13 @@
 # lsonnet
 
-## What is it?
+## What is it?
 
 lsonnet are the templates that Lush DevOps used to generate kubernetes manifests
 customised with user defined and pipeline based configuration files. This tool only
 handles the generated of Kubernetes manifests and is designed to slot into a
 pipeline or whatever process is required for deploying to Kubernetes
 
-## Why?
+## Why?
 
 The manifests are defined with a superset of JSON called
 [jsonnet](https://jsonnet.org). The reason this is used is because:
@@ -20,7 +20,7 @@ The manifests are defined with a superset of JSON called
 - jsonnet isn't as complex as a full programming and that's good as that it's more
   domain specific.
 
-## Testing
+## Testing
 
 We use a framework called [jsonnetunit](https://github.com/yugui/jsonnetunit) to
 unit test each template. These live in the `./tests` directory. We have a
@@ -116,18 +116,18 @@ loop, and _I think_ are always contained in arrays. So:
 
 ```
 
-## Go Commands
+## Go Commands
 
 The source in this repository builds a binary to help orchestrate and manage the
 jsonnet templates.
 
-### lsonnet generate
+### lsonnet generate
 
 `lsonnet` generate renders a Kuernetes manifest, using passed in variables of
 appConfig and pipelineConfig to generate the manifest. Pipeline Config takes
 precedent. These are passed in as file paths or as strings.
 
-### lsonnet test
+### lsonnet test
 
 The test commands iterates through the test directory and renders all of the
 jsonnet files it finds in the subdirectories, using the yaml files with the
@@ -149,7 +149,7 @@ test fixtures and pass those through
 [kubeval](https://github.com/instrumenta/kubeval] so that we can make sure it's
 a valid Kubernetes resource against the version we specify.
 
-### lsonnet server
+### lsonnet server
 
 We can run a simple http server to "template as a service". We can fire off a
 HTTP POST at `/template` with a body container `{ "appConfig": {},
