@@ -4,7 +4,7 @@
 
 lsonnet are the templates that Lush DevOps used to generate kubernetes manifests
 customised with user defined and pipeline based configuration files. This tool only
-handles the generated of Kubernetes manifests and is designed to slot into a
+handles the generation of Kubernetes manifests and is designed to slot into a
 pipeline or whatever process is required for deploying to Kubernetes
 
 ## Why?
