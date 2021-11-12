@@ -52,7 +52,7 @@ populate the keys*.
 ### `tests/`
 
 This directory holds the test suites for jsonnetunit to use. Each directory
-represenets a template. Each directory contains a number of different suites to
+represents a template. Each directory contains a number of different suites to
 account for diffferent scenarios. Each suite consists of two files, with the
 same filename with different extensions, one with `.jsonnet` and one with
 `.yaml`. The jsonnet file holds the assertions and the yaml file holds the
